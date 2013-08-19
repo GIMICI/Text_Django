@@ -1,5 +1,9 @@
 # Django settings for Test_Django project.
 
+from os.path import dirname, join
+
+PROJECT_DIR = dirname(__file__)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -12,7 +16,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'C:\\Users\\arturo.pareja.COGNODATA\\workspace_django\\Test_Django\\src\\sqlite.db',                      # Or path to database file if using sqlite3.
+        'NAME': join(PROJECT_DIR, 'db', 'sqlite.db'),                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
